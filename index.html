@@ -30,10 +30,6 @@
 			<hr class="my-4">
 			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
 			<div id="countdown">
-			<button id="days" type="button" class="btn btn-lg">Days</button>
-			<button id="hours" type="button" class="btn btn-lg">Hours</button>
-			<button id="minutes" type="button" class="btn btn-lg">Minutes</button>
-			<button id="seconds" type="button" class="btn btn-lg">Seconds</button>
 			</div>
 		</div>
 	</div>
@@ -99,10 +95,6 @@
 
 	// get tag element
 	var countdown = document.getElementById('countdown');
-	var daysbtn = document.getElementById('days');
-	var hoursbtn = document.getElementById('days');
-	var minutesbtn = document.getElementById('days');
-	var secondsbtn = document.getElementById('days');
 
 	// update the tag with id "countdown" every 1 second
 	setInterval(function () {
@@ -121,11 +113,8 @@
 	    minutes = parseInt(seconds_left / 60);
 	    seconds = parseInt(seconds_left % 60);
 
-	    // format countdown string + set tag value
-	    daysbtn.innerHTML = days;
-	    hoursbtn.innerHTML = hours;
-	    minutesbtn.innerHTML = minutes;
-	    secondsbtn.innerHTML = seconds;
+	        // format countdown string + set tag value
+    countdown.innerHTML = '<button type="button" class="btn btn-lg">' + days +  ' Days</button><button type="button" class="btn btn-lg">' + hours + ' Hours</button><button type="button" class="btn btn-lg"> + minutes + ' Minutes</button><button type="button" class="btn btn-lg">' + seconds + ' Seconds</button>;
 		
 	}, 1000);
 	</script>
