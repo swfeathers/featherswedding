@@ -99,6 +99,10 @@
 
 	// get tag element
 	var countdown = document.getElementById('countdown');
+	var daysbtn = document.getElementById('days');
+	var hoursbtn = document.getElementById('days');
+	var minutesbtn = document.getElementById('days');
+	var secondsbtn = document.getElementById('days');
 
 	// update the tag with id "countdown" every 1 second
 	setInterval(function () {
@@ -118,10 +122,10 @@
 	    seconds = parseInt(seconds_left % 60);
 
 	    // format countdown string + set tag value
-	    days.innerHTML = days;
-	    hours.innerHTML = hours;
-	    minutes.innerHTML = minutes;
-	    seconds.innerHTML = seconds;
+	    daysbtn.innerHTML = days;
+	    hoursbtn.innerHTML = hours;
+	    minutesbtn.innerHTML = minutes;
+	    secondsbtn.innerHTML = seconds;
 		
 	}, 1000);
 	</script>
