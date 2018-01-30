@@ -29,7 +29,7 @@
 			<p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
 			<hr class="my-4">
 			<p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
-			<p class="lead"><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
+			<div id="countdown"></div>
 		</div>
 	</div>
 	<ul class="nav justify-content-center bg-light py-3 mb-4">
@@ -84,6 +84,39 @@
 	<script crossorigin="anonymous" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js">
 	</script> 
 	<script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
+	</script>
+	<script>
+	// set the date we're counting down to
+	var target_date = new Date('Jul, 14, 2018').getTime();
+
+	// variables for time units
+	var days, hours, minutes, seconds;
+
+	// get tag element
+	var countdown = document.getElementById('countdown');
+
+	// update the tag with id "countdown" every 1 second
+	setInterval(function () {
+
+	    // find the amount of "seconds" between now and target
+	    var current_date = new Date().getTime();
+	    var seconds_left = (target_date - current_date) / 1000;
+
+	    // do some time calculations
+	    days = parseInt(seconds_left / 86400);
+	    seconds_left = seconds_left % 86400;
+
+	    hours = parseInt(seconds_left / 3600);
+	    seconds_left = seconds_left % 3600;
+
+	    minutes = parseInt(seconds_left / 60);
+	    seconds = parseInt(seconds_left % 60);
+
+	    // format countdown string + set tag value
+	    countdown.innerHTML = '<span class="days">' + days +  ' <b>Days</b></span> <span class="hours">' + hours + ' <b>Hours</b></span> <span class="minutes">'
+	    + minutes + ' <b>Minutes</b></span> <span class="seconds">' + seconds + ' <b>Seconds</b></span>';  
+
+	}, 1000);
 	</script>
 </body>
 </html>
