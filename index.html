@@ -31,8 +31,7 @@
 			<p class="lead">We're getting married and we'd like you to be there.</p>
 			<hr class="my-4 border-light">
 			<p>If you can't find the information you need on here then just call us!</p>
-			<div id="countdown" class="">
-			</div>
+			<div id="countdown" class=""></div>
 		</div>
 	</div>
 	<ul class="nav justify-content-center bg-light py-3 mb-4">
@@ -111,37 +110,15 @@
 	</script> 
 	<script crossorigin="anonymous" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js">
 	</script>
-	<script>
-	// set the date we're counting down to
-	var target_date = new Date('Jul, 14, 2018').getTime();
-
-	// variables for time units
-	var days, hours, minutes, seconds;
-
-	// get tag element
-	var countdown = document.getElementById('countdown');
-
-	// update the tag with id "countdown" every 1 second
-	setInterval(function () {
-
-	    // find the amount of "seconds" between now and target
-	    var current_date = new Date().getTime();
-	    var seconds_left = (target_date - current_date) / 1000;
-
-	    // do some time calculations
-	    days = parseInt(seconds_left / 86400);
-	    seconds_left = seconds_left % 86400;
-
-	    hours = parseInt(seconds_left / 3600);
-	    seconds_left = seconds_left % 3600;
-
-	    minutes = parseInt(seconds_left / 60);
-	    seconds = parseInt(seconds_left % 60);
-
-	        // format countdown string + set tag value
-    countdown.innerHTML = '<button type="button" class="btn btn-lg btn-secondary">' + days +  ' Days</button> <button type="button" class="btn btn-lg btn-secondary">' + hours + ' Hours</button> <button type="button" class="btn btn-lg btn-secondary">' + minutes + ' Minutes</button> <button type="button" class="btn btn-lg btn-secondary">' + seconds + ' Seconds</button>';
-		
-	}, 1000);
+	<script src="js/jquery.countdown.min.js">
+	</script>	
+	<script type="text/javascript">
+		$("#countdown")
+		.countdown("2017/01/01", function(event) {
+		$(this).text(
+		event.strftime('%D days %H:%M:%S')
+		);
+		});
 	</script>
 </body>
 </html>
