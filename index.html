@@ -115,10 +115,10 @@
 	<script type="text/javascript">
 		$("#countdown").countdown("2018/07/14 14:00:00", function(event) {
 		var $this = $(this).html(event.strftime(''
-    + '<button class="btn">%d</button> days '
-    + '<button class="btn">%H</button> hr '
-    + '<button class="btn">%M</button> min '
-    + '<button class="btn">%S</button> sec'));
+    + '<button class="btn">%D day%!D</button> '
+    + '<button class="btn">%H hour%!H</button> '
+    + '<button class="btn">%M minute%!M</button> '
+    + '<button class="btn">%S second%!S</button>'));
 		});
 	</script>
 </body>
